@@ -34,6 +34,7 @@ section:nth-of-type(even) {
 
 section h1 {
 	color: #fff;
+	font-size:2.5vw;
 }
 
 .vertical-center {
