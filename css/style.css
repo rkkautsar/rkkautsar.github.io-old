@@ -61,3 +61,7 @@ section h1 {
 	font-size:1.25rem;
 	line-height: 1.6;
 }
+
+img.avatar {
+	border-radius:50%;
+}
