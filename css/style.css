@@ -12,7 +12,7 @@ html,body {
 }
 
 body {
-	font-size:18px;
+	font-size: 16px;
 	font-family: "Ubuntu", sans-serif;
 }
 
@@ -34,7 +34,6 @@ section:nth-of-type(even) {
 
 section h1 {
 	color: #fff;
-	font-size:2.5vw;
 }
 
 .vertical-center {
@@ -49,8 +48,19 @@ section h1 {
 #container{
 	margin: 0 auto;
 	width:80%;
-	max-width: 900px;
+	max-width: 960px;
 	text-align:center;
+}
+
+#container h1 {
+	font-weight: 300;
+	font-size:34px;
+	font-size:4vw;
+}
+
+#container p {
+	font-size:20px;
+	font-size: 3vmin;
 }
 
 img.avatar {
