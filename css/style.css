@@ -12,7 +12,7 @@ html,body {
 }
 
 body {
-	font-size:100%;
+	font-size: 16px;
 	font-family: "Ubuntu", sans-serif;
 }
 
@@ -36,37 +36,28 @@ section h1 {
 	color: #fff;
 }
 
-#container{
+.vertical-center {
 	position:absolute;
 	top:50%;
 	left:50%;
 	bottom:auto;
 	right:auto;
 	transform:translate(-50%,-50%);
+}
+
+#container{
+	margin: 0 auto;
 	width:80%;
-	max-width: 900px;
+	max-width: 960px;
 	text-align:center;
 }
 
 #container h1 {
 	font-weight: 300;
-	font-size:20px;
-	font-size:1.25rem;
+	font-size:2.5rem;
 }
 
 #container p {
-	line-height: 1.6rem;
-}
-
-
-@media only screen and (min-width: 768px) {
-  #container h1 {
-    font-size: 30px;
-    font-size: 1.875rem;
-  }
-  #container p {
-    font-size: 20px;
-    font-size: 1.25rem;
-    line-height: 2;
-  }
+	font-size:1.25rem;
+	line-height: 1.6;
 }
