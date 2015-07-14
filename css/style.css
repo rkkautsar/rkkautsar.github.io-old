@@ -66,10 +66,24 @@ section h1 {
 @media (min-width: 499px) {
 	#container h1 {
 		font-size:28px;
+		font-size:1.8vw;
 	}
 
 	#container p {
 		font-size:20px;
+		font-size:1.2vw;
+	}
+}
+
+@media (max-width: 240px) { //xsmall
+	#container h1 {
+		font-size:20px;
+		font-size:1.2vw;
+	}
+
+	#container p {
+		font-size:14px;
+		font-size:1vw;
 	}
 }
 
