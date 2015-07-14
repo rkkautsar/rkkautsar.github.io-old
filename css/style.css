@@ -1,68 +1,90 @@
-html * {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html *
+{
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-*, *:after, *:before {
-  box-sizing: border-box;
+*,
+*:after,
+*:before
+{
+    box-sizing: border-box;
 }
 
-html,body {
-	height:100%;
+html,
+body
+{
+    height: 100%;
 }
 
-body {
-	font-size: 16px;
-	font-family: "Ubuntu", sans-serif;
+body
+{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 16px;
 }
 
-section {
+section
+{
+    position: relative;
+
+    padding: 2em 0;
+}
+
+section:nth-of-type(odd)
+{
+    color: #898099;
+    background-color: #3e3947;
+}
+
+section:nth-of-type(even)
+{
+    color: #bda3ad;
+    background-color: #745360;
+}
+
+section.head{
 	min-height:100%;
-	position:relative;
-	padding:2em 0;
 }
 
-section:nth-of-type(odd) {
-	background-color: #3e3947;
-	color: #898099;
+section.head #container{
+	position: absolute;
+    top: 50%;
+    right: auto;
+    bottom: auto;
+    left: 50%;
+
+    transform: translate(-50%,-50%);
 }
 
-section:nth-of-type(even) {
-	background-color: #745360;
-	color: #bda3ad;
+section h1
+{
+    color: #fff;
 }
 
-section h1 {
-	color: #fff;
+#container
+{
+    width: 80%;
+    max-width: 960px;
+    margin: 0 auto;
+
+    text-align: center;
 }
 
-.vertical-center {
-	position:absolute;
-	top:50%;
-	left:50%;
-	bottom:auto;
-	right:auto;
-	transform:translate(-50%,-50%);
+#container h1
+{
+    font-size: 34px;
+    font-weight: 300;
+    /*font-size:4vw;*/
 }
 
-#container{
-	margin: 0 auto;
-	width:80%;
-	max-width: 960px;
-	text-align:center;
+#container p
+{
+    font-size: 20px;
+    line-height: 25px;
+    /*font-size: 4vmax;*/
 }
 
-#container h1 {
-	font-weight: 300;
-	font-size:34px;
-	font-size:4vw;
-}
-
-#container p {
-	font-size:20px;
-	font-size: 3vmin;
-}
-
-img.avatar {
-	border-radius:50%;
+img.avatar
+{
+    border-radius: 50%;
 }
