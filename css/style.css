@@ -57,7 +57,7 @@ p, ul, ol, pre, table, blockquote {
   margin-top: 1.6875rem;
   margin-bottom: 1.6875rem; }
 
-section {
+header, section, footer {
   position: relative;
   padding: 2em 0; }
 
@@ -69,20 +69,21 @@ section:nth-of-type(even) {
   color: #030303;
   background-color: #f5f5f5; }
 
-section.head {
+header {
   min-height: 100%;
   padding: 0;
-  transition: all .5s ease;
   background-attachment: fixed;
   background-size: cover; }
-  section.head h3 {
-    color: #ffffff;
-    display: block; }
-  section.head canvas {
-    position: fixed; }
-  section.head #container {
-    z-index: 1;
+  header h3 {
+    display: block;
+    color: #ffffff; }
+  header canvas {
+    position: fixed;
+    width: 100%;
+    height: 100%; }
+  header #container {
     position: absolute;
+    z-index: 1;
     top: 50%;
     right: auto;
     bottom: auto;
@@ -97,6 +98,14 @@ section.head {
 
 img.avatar {
   border-radius: 50%; }
+
+ul.social-icons {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+  ul.social-icons li {
+    display: inline;
+    margin: 0; }
 
 .row {
   max-width: 100%;
