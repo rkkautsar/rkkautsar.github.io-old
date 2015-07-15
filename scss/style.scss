@@ -18,10 +18,11 @@ $main-color : set-text-color($main-bg);
 $secondary-color : set-text-color($secondary-bg);
 
 // NEAT
-$xsmall  : new-breakpoint(max-width 320px);
-$mobile   : new-breakpoint(max-width 599px);
+$xsmall : new-breakpoint(max-width 320px);
+$mobile : new-breakpoint(max-width 599px);
+$medium : new-breakpoint(max-width 719px);
 $default : new-breakpoint(min-width 600px);
-$xlarge  : new-breakpoint(min-width 1600px);
+$xlarge : new-breakpoint(min-width 1600px);
 
 // MAIN STYLE
 
@@ -52,6 +53,12 @@ body {
     color : $text-color;
 }
 
+a {
+    text-decoration : none;
+
+    color : inherit;
+}
+
 h1 {
     font-size : 5rem;
     line-height : 5.0625rem;
@@ -70,9 +77,8 @@ h2 {
 
 h3 {
     font-size : 1.9375rem;
-    line-height : 3.375rem;
-
     font-weight : 300;
+    line-height : 3.375rem;
 
     margin-top : 1.6875rem;
     margin-bottom : 1.6875rem;
@@ -109,13 +115,25 @@ section:nth-of-type(even) {
 
 section.head {
     min-height : 100%;
-    background-size: cover;
 
+    padding: 0;
+
+    transition : all .5s ease;
+
+    background-attachment : fixed;
+    background-size : cover;
+    
     h3 {
         color : $white;
+        display: block;
+    }
+
+    canvas {
+        position: fixed;
     }
 
     #container {
+        z-index:1;
         position : absolute;
         top : 50%;
         right : auto;
@@ -124,6 +142,7 @@ section.head {
 
         transform : translate(-50%,-50%);
     }
+    
 }
 
 #container {
@@ -145,7 +164,7 @@ img.avatar {
 .col-3 {
     @include span-columns(4);
     @include omega(3n);
-    @include media($mobile) {
+    @include media($medium) {
         @include span-columns(12);
     }
 }

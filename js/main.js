@@ -1,12 +1,15 @@
 var pattern = Trianglify({
 	width: window.innerWidth,
 	height: window.innerHeight,
-	x_colors: 'Blues',
-	seed: '1249u1hd2',
+	x_colors: 'random',
+	seed: 'rkkautsar/github/io',
 	cell_size: 50
 });
 
 $(function(){
-	$('section.head').css('background-image', 'url(' + pattern.png() + ')');
+	var header = $('section.head');
+
+	header.append(pattern.canvas());
+
 });
 

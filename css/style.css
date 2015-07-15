@@ -24,6 +24,10 @@ body {
   margin: 0 auto;
   color: #333; }
 
+a {
+  text-decoration: none;
+  color: inherit; }
+
 h1 {
   font-size: 5rem;
   line-height: 5.0625rem;
@@ -38,8 +42,8 @@ h2 {
 
 h3 {
   font-size: 1.9375rem;
-  line-height: 3.375rem;
   font-weight: 300;
+  line-height: 3.375rem;
   margin-top: 1.6875rem;
   margin-bottom: 1.6875rem; }
 
@@ -67,10 +71,17 @@ section:nth-of-type(even) {
 
 section.head {
   min-height: 100%;
+  padding: 0;
+  transition: all .5s ease;
+  background-attachment: fixed;
   background-size: cover; }
   section.head h3 {
-    color: #ffffff; }
+    color: #ffffff;
+    display: block; }
+  section.head canvas {
+    position: fixed; }
   section.head #container {
+    z-index: 1;
     position: absolute;
     top: 50%;
     right: auto;
@@ -107,7 +118,7 @@ img.avatar {
     margin-right: 0; }
   .col-3:nth-child(3n+1) {
     clear: left; }
-  @media screen and (max-width: 599px) {
+  @media screen and (max-width: 719px) {
     .col-3 {
       float: left;
       display: block;
