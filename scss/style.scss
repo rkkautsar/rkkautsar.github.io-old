@@ -1,5 +1,7 @@
 @import 'bourbon/bourbon';
 @import 'neat/neat';
+@import 'colors/_quantum-colors';
+@import '_mixins';
 
 // CONFIG
 $total_width : 100%;
@@ -9,14 +11,17 @@ $max_width : 100%;
 
 
 // COLORS
-$base-blue: #267EC8;
-$base-green: #00A504;
-$base-red: #EA002A;
-$base-gray: #aaaaaa;
-$main-bg	: desaturate($base-blue,50%);
-$main-color : lighten($main-bg,30%);
-$secondary-bg	 : desaturate($base-green,50%);
-$secondary-color : lighten($secondary-bg,30%);
+$text-color : #333;
+$main-bg : $grey-200;
+$secondary-bg : $grey-100;
+$main-color : set-text-color($main-bg);
+$secondary-color : set-text-color($secondary-bg);
+
+// NEAT
+$xsmall  : new-breakpoint(max-width 320px);
+$mobile   : new-breakpoint(max-width 599px);
+$default : new-breakpoint(min-width 600px);
+$xlarge  : new-breakpoint(min-width 1600px);
 
 // MAIN STYLE
 
@@ -35,7 +40,7 @@ html, body {
 
 body {
     font-family : 'Ubuntu', sans-serif;
-    font-size : 16px;
+    font-size : 14px;
 }
 
 body {
@@ -43,6 +48,8 @@ body {
     line-height : 1.6875rem;
 
     margin : 0 auto;
+
+    color : $text-color;
 }
 
 h1 {
@@ -64,6 +71,8 @@ h2 {
 h3 {
     font-size : 1.9375rem;
     line-height : 3.375rem;
+
+    font-weight : 300;
 
     margin-top : 1.6875rem;
     margin-bottom : 1.6875rem;
@@ -100,27 +109,26 @@ section:nth-of-type(even) {
 
 section.head {
     min-height : 100%;
-}
+    background-size: cover;
 
-section.head #container {
-    position : absolute;
-    top : 50%;
-    right : auto;
-    bottom : auto;
-    left : 50%;
+    h3 {
+        color : $white;
+    }
 
-    transform : translate(-50%,-50%);
-}
+    #container {
+        position : absolute;
+        top : 50%;
+        right : auto;
+        bottom : auto;
+        left : 50%;
 
-section h3 {
-    font-weight : 300;
-
-    color : #fff;
+        transform : translate(-50%,-50%);
+    }
 }
 
 #container {
     width : 80%;
-    max-width : 960px;
+    max-width : 1200px;
     margin : 0 auto;
 
     text-align : center;
@@ -130,18 +138,14 @@ img.avatar {
     border-radius : 50%;
 }
 
-
-// LAYOUT < 720
-
-
-
-// LAYOUT > 720
-
-@media screen and (min-width: 720px) {
+.row {
+    @include outer-container(100%);
 }
 
-
-// LAYOUT > 960
-
-@media all and (min-width: 960px) {
+.col-3 {
+    @include span-columns(4);
+    @include omega(3n);
+    @include media($mobile) {
+        @include span-columns(12);
+    }
 }
