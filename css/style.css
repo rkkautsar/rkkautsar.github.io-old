@@ -1,9 +1,120 @@
+@charset "UTF-8";
 html {
   box-sizing: border-box; }
 
 *, *::after, *::before {
   box-sizing: inherit; }
 
+body {
+  color: #232330;
+  font-family: "Georgia", "Times", serif; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 1.16em;
+  color: #20202e;
+  font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+  line-height: 1.1; }
+
+h6 {
+  color: #889; }
+
+p {
+  margin: 0 0 1.16em;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 150%; }
+  p.lead, blockquote p {
+    font-size: 1.275rem;
+    line-height: 1.33; }
+
+ul,
+ol {
+  padding-left: 1.5rem; }
+  ul li,
+  ol li {
+    line-height: 150%; }
+  ul.unstyled,
+  ol.unstyled {
+    padding: 0;
+    list-style: none; }
+  ul.inline,
+  ol.inline {
+    margin: 0 1rem 1.16em -1rem;
+    padding: 0;
+    list-style: none;
+    overflow: hidden; }
+    ul.inline > li,
+    ol.inline > li {
+      display: block;
+      float: left;
+      margin-left: 1rem;
+      list-style: none; }
+
+dl {
+  margin: 0 0 1.16em;
+  line-height: 150%; }
+
+dt {
+  font-weight: bold; }
+
+dd {
+  margin: 0 0 0.5rem; }
+
+blockquote {
+  position: relative;
+  margin: 1.5rem 1rem 1.5rem 3rem; }
+  blockquote:before {
+    content: "“";
+    display: block;
+    position: absolute;
+    top: -1rem;
+    left: -3rem;
+    color: #889;
+    font-size: 5rem;
+    line-height: 1; }
+
+.text-left {
+  text-align: left; }
+
+.text-center {
+  text-align: center; }
+
+.text-right {
+  text-align: right; }
+
+.text-accent {
+  color: #bc131a; }
+
+.text-muted {
+  color: #889; }
+
+@media only screen and (min-width: 641px) {
+  h1 {
+    font-size: 5.0625rem; }
+
+  h2 {
+    font-size: 3.375rem; }
+
+  h3 {
+    font-size: 2.25rem; }
+
+  h4 {
+    font-size: 1.5rem; }
+
+  h5 {
+    font-size: 1rem; }
+
+  h6 {
+    font-size: 1rem; }
+
+  p.lead, blockquote p {
+    font-size: 1.5rem; } }
 html * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
@@ -15,47 +126,11 @@ html, body {
   height: 100%; }
 
 body {
-  font-family: 'Ubuntu', sans-serif;
   font-size: 14px; }
-
-body {
-  font-size: 1.1875rem;
-  line-height: 1.6875rem;
-  margin: 0 auto;
-  color: #333; }
 
 a {
   text-decoration: none;
   color: inherit; }
-
-h1 {
-  font-size: 5rem;
-  line-height: 5.0625rem;
-  margin-top: 3.375rem;
-  margin-bottom: 1.6875rem; }
-
-h2 {
-  font-size: 3.125rem;
-  line-height: 3.375rem;
-  margin-top: 3.375rem;
-  margin-bottom: 1.6875rem; }
-
-h3 {
-  font-size: 1.9375rem;
-  font-weight: 300;
-  line-height: 3.375rem;
-  margin-top: 1.6875rem;
-  margin-bottom: 1.6875rem; }
-
-h4 {
-  font-size: 1.1875rem;
-  line-height: 1.6875rem;
-  margin-top: 1.6875rem;
-  margin-bottom: 1.6875rem; }
-
-p, ul, ol, pre, table, blockquote {
-  margin-top: 1.6875rem;
-  margin-bottom: 1.6875rem; }
 
 header, section, footer {
   position: relative;
@@ -92,7 +167,7 @@ header {
 
 #container {
   width: 80%;
-  max-width: 1200px;
+  max-width: 90%;
   margin: 0 auto;
   text-align: center; }
 
