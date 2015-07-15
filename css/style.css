@@ -151,7 +151,8 @@ header {
   background-size: cover; }
   header h3 {
     display: block;
-    color: #ffffff; }
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.2); }
   header canvas {
     position: fixed;
     width: 100%;
@@ -172,7 +173,8 @@ header {
   text-align: center; }
 
 img.avatar {
-  border-radius: 50%; }
+  border-radius: 50%;
+  box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.3); }
 
 ul.social-icons {
   margin: 0;
