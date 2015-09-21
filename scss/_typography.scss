@@ -2,6 +2,9 @@
 // typography
 //
 
+// font families
+@import url(https://fonts.googleapis.com/css?family=Roboto:100);
+
 // famous ratios
 $PERFECT_FOURTH:          (4/3);
 $PERFECT_FIFTH:           (3/2);
@@ -10,7 +13,7 @@ $GOLDEN_RATIO:            1.618;
 // http://en.wikipedia.org/wiki/Golden_ratio
 
 // set your ratio here
-$scale:                   $PERFECT_FIFTH;
+$scale:                   $PERFECT_FOURTH;
 
 $base-font-size:          100% !default;
 $base-line-height:        150% !default;
@@ -22,7 +25,7 @@ $paragraph-margin:        1.16em;
 // scales that look good with one font will not look good with another
 // pls experiment
 $serif-font-family:       "Georgia", "Times", serif !default;
-$sans-serif-font-family:  "Helvetica Neue", "Helvetica", Arial, sans-serif !default;
+$sans-serif-font-family:  "Roboto","Helvetica Neue", "Helvetica", Arial, sans-serif !default;
 
 $headings-font-family:    $sans-serif-font-family;
 $body-font-family:        $serif-font-family;
@@ -61,6 +64,7 @@ h6 {
   margin: 0 0 $paragraph-margin;
   color: $heading-text-color;
   font-family: $headings-font-family;
+  font-weight:100;
   line-height: 1.1;
 }
 
@@ -159,7 +163,7 @@ blockquote {
 @media only screen and (min-width: #{$small + 1px}) {
   h1 { font-size: 1rem * $scale * $scale * $scale * $scale; }
   h2 { font-size: 1rem * $scale * $scale * $scale; }
-  h3 { font-size: 1rem * $scale * $scale; }
+  h3 { font-size: 1rem * $scale * $scale ; }
   h4 { font-size: 1rem * $scale; }
   h5 { font-size: 1rem; }
   h6 { font-size: 1rem; }

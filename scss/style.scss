@@ -73,13 +73,6 @@ header {
 
     background-attachment : fixed;
     background-size : cover;
-    h3 {
-        display : block;
-
-        color : $white;
-
-        text-shadow : 0 0 10px rgba(0,0,0,.2);
-    }
     canvas {
         position : fixed;
 
@@ -96,6 +89,27 @@ header {
 
         transform : translate(-50%,-50%);
     }
+    #subtitle {
+        position : absolute;
+        background : rgba(0,0,0,0.5);
+        padding : 20px;
+        z-index : 1;
+        bottom: 0;
+        width: 100%;
+
+        h1 {
+            color: white;
+            margin:0 auto;
+            padding:0;
+            font-family: "Roboto";
+            font-weight: 100;
+            text-align:center;
+        }
+    }
+}
+
+footer {
+    color: white;
 }
 
 #container {
