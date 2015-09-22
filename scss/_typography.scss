@@ -160,7 +160,7 @@ blockquote {
 // media queries
 // your small-screen breakpoint
 // use your own breakpoints here
-@media only screen and (min-width: #{$small + 1px}) {
+@include media($small) {
   h1 { font-size: 1rem * $scale * $scale * $scale * $scale; }
   h2 { font-size: 1rem * $scale * $scale * $scale; }
   h3 { font-size: 1rem * $scale * $scale ; }
