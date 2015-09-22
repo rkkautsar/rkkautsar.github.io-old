@@ -97,7 +97,7 @@ header {
         bottom: 0;
         width: 100%;
 
-        h1 {
+        h2 {
             color: white;
             margin:0 auto;
             padding:0;
@@ -109,7 +109,7 @@ header {
 }
 
 footer {
-    color: white;
+    color: white;   
 }
 
 #container {
@@ -147,5 +147,24 @@ ul.social-icons {
     @include omega(3n);
     @include media($medium) {
         @include span-columns(12);
+    }
+}
+
+.img-array-5-90 {
+    position:absolute;
+    width:100%;
+
+    img {
+        max-width: 90px;
+        max-height: 90px;
+        width:18.3333%;
+        height:18.3333%;
+        margin:0 0.8333%;
+    }
+}
+
+.hidden-sm {
+    @include media($medium) {
+        display:none;
     }
 }

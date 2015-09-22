@@ -170,7 +170,7 @@ header {
     z-index: 1;
     bottom: 0;
     width: 100%; }
-    header #subtitle h1 {
+    header #subtitle h2 {
       color: white;
       margin: 0 auto;
       padding: 0;
@@ -228,5 +228,19 @@ ul.social-icons {
       width: 100%; }
       .col-3:last-child {
         margin-right: 0; } }
+
+.img-array-5-90 {
+  position: absolute;
+  width: 100%; }
+  .img-array-5-90 img {
+    max-width: 90px;
+    max-height: 90px;
+    width: 18.3333%;
+    height: 18.3333%;
+    margin: 0 0.8333%; }
+
+@media screen and (max-width: 719px) {
+  .hidden-sm {
+    display: none; } }
 
 /*# sourceMappingURL=style.css.map */
