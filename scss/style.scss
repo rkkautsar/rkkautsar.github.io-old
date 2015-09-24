@@ -12,7 +12,7 @@ $max_width : 100%;
 
 
 // COLORS
-$text-color : #333;
+$text-color : white;
 $main-bg : $grey-200;
 $secondary-bg : $grey-100;
 $main-color : set-text-color($main-bg);
@@ -42,6 +42,8 @@ html, body {
 
 body {
     font-size : 14px;
+    font-family: "Roboto", "Helvetica Neue", sans;
+    color: white;
 }
 
 a {
@@ -65,6 +67,11 @@ section:nth-of-type(odd) {
 section:nth-of-type(even) {
     color : $secondary_color;
     background-color : $secondary_bg;
+}
+
+#gallery-container {
+    background-color: rgba(0,0,0,0.5);
+    padding: 20px;
 }
 
 header {
@@ -96,7 +103,6 @@ header {
         z-index : 1;
         bottom: 0;
         width: 100%;
-
         h2 {
             color: white;
             margin:0 auto;
@@ -105,6 +111,12 @@ header {
             font-weight: 100;
             text-align:center;
         }
+    }
+    #back-container{
+        position:absolute;
+        top:20px;
+        left:0;
+        z-index: 1;
     }
 }
 
@@ -167,4 +179,18 @@ ul.social-icons {
     @include media($medium) {
         display:none;
     }
+}
+
+/*
+    From http://cssdeck.com/labs/beautiful-flat-buttons
+*/
+.btn {
+    padding:20px;
+    font-size:1.5rem;
+    text-align:center;
+    background:#2980b9;
+    border:0;
+    border-bottom: 2px solid #2475ab;
+    -webkit-box-shadow: inset 0 -2px #2475ab;
+    box-shadow: inset 0 -2px #2475ab;
 }

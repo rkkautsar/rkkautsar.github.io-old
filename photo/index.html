@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>rkkautsar &middot; photos</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="jquery-photowall/jquery-photowall.css">
+	<!--[if lte IE 8]><script>(function(){var e="abbr,article,aside,audio,canvas,datalist,details,figure,footer,header,hgroup,mark,menu,meter,nav,output,progress,section,time,video".split(','),i=e.length;while(i--){document.createElement(e[i]);}}());</script><![endif]-->	
+</head>
+<body>
+	<header>
+		<div id="back-container">
+			<a href="/" class="btn"> &lt; Back </a>
+		</div>
+		<div id="container">
+			<h1>A showcase of my hobby as an amateur photographer.</h1>
+		</div>
+	</header>
+
+	<section id="gallery-container">
+		<div id="gallery">
+    		<div class="body">
+		    	<!--jquery-photowall-->	
+	    	</div>
+		</div>
+	</section>
+
+	<footer>
+		<div id="container">
+			<ul class="social-icons">
+				<li>
+					<a href="http://facebook.com/rakha.kk">
+						<img src="img/facebook.png" height="50" width="50" alt="facebook">
+					</a>
+				</li>
+				<li>
+					<a href="http://google.com/+RakhaKanzKautsar">
+						<img src="img/google-plus.png" height="50" width="50" alt="google+">
+					</a>
+				</li>
+				<li>
+					<a href="http://github.com/rkkautsar">
+						<img src="img/github.png" height="50" width="50" alt="github">
+					</a>
+				</li>
+				<li>
+					<a href="http://twitter.com/rkkautsar">
+						<img src="img/twitter.png" height="50" width="50" alt="twitter">
+					</a>
+				</li>
+				<li>
+					<a href="mailto:rkkautsar@gmail.com">
+						<img src="img/email.png" height="50" width="50" alt="email">
+					</a>
+				</li>
+			</ul>
+			<p>Made with 
+<svg xmlns="http://www.w3.org/2000/svg" width="14px" height="14px" viewBox="0 0 32 32" version="1"><path fill="#e51c23" d="M0 10 C0 6, 3 2, 8 2 C12 2, 15 5, 16 6 C17 5, 20 2, 24 2 C30 2, 32 6, 32 10 C32 18, 18 29, 16 30 C14 29, 0 18, 0 10"/></svg> by rkkautsar.</p>
+		</div>
+	</footer>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="jquery-photowall/jquery-photowall.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/trianglify/0.2.0/trianglify.min.js"></script>
+	<script src="js/main.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+		    PhotoWall.init({
+		        el:             '#gallery'               // Gallery element
+		        ,zoom:          true                     // Use zoom
+		        ,zoomAction:    'mouseenter'             // Zoom on action
+		        ,zoomTimeout:   500                      // Timeout before zoom
+		        ,zoomDuration:  100                      // Zoom duration time
+		        ,showBox:       true                     // Enavle fullscreen mode
+		        ,showBoxSocial: true                     // Show social buttons
+		        ,padding:       10                       // padding between images in gallery
+		        ,lineMaxHeight: 270	                   	 // Max set height of pictures line
+		    });
+
+		    $.ajax({
+		                url: 'https://picasaweb.google.com/data/feed/api/user/107993330344730452325/albumid/6198023890795431857'
+		                         +'/?alt=json&fields=entry(gphoto:id,title,media:group(media:thumbnail,media:'
+		                         +'content))&imgmax=720',
+		                dataType: 'jsonp',
+		                success: function(data){
+		                    var photos = {}
+		                if(!data.feed.entry) return;
+		                for(var i in data.feed.entry) {
+		                        var e     = data.feed.entry[i].media$group;
+		                        var id    = data.feed.entry[i].gphoto$id.$t;
+
+		                        var t1h   = e.media$thumbnail[2].height;
+		                        var t1w   = e.media$thumbnail[2].width;
+		                        var t1src = e.media$thumbnail[2].url
+
+		                        var t2w   = Math.round(t1w * 1.5);
+		                        var t2h   = Math.round(t1h * 1.5);
+
+		                        var t2src = e.media$content[0].url+'/../../w'+t2w+'-h'+t2h+'/';
+
+		                    var bsrc  = e.media$content[0].url;
+		                    var bw    = e.media$content[0].width;
+		                    var bh    = e.media$content[0].height;
+
+
+		                        photos[id] = {id:id,img:bsrc,width:bw,height:bh,th:{src:t1src,width:t1w,height:t1h,zoom_src:t2src,zoom_factor:1.5}};
+
+		                }
+		                    PhotoWall.load(photos);
+		            }
+		        });
+		});
+	</script>
+</body>
+</html>

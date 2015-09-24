@@ -17,7 +17,7 @@ h4,
 h5,
 h6 {
   margin: 0 0 1.16em;
-  color: #20202e;
+  color: #fff;
   font-family: "Roboto", "Helvetica Neue", "Helvetica", Arial, sans-serif;
   font-weight: 100;
   line-height: 1.1; }
@@ -128,7 +128,9 @@ html, body {
   height: 100%; }
 
 body {
-  font-size: 14px; }
+  font-size: 14px;
+  font-family: "Roboto", "Helvetica Neue", sans;
+  color: white; }
 
 a {
   text-decoration: none;
@@ -145,6 +147,10 @@ section:nth-of-type(odd) {
 section:nth-of-type(even) {
   color: #030303;
   background-color: #f5f5f5; }
+
+#gallery-container {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px; }
 
 header {
   min-height: 100%;
@@ -177,6 +183,11 @@ header {
       font-family: "Roboto";
       font-weight: 100;
       text-align: center; }
+  header #back-container {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    z-index: 1; }
 
 footer {
   color: white; }
@@ -242,5 +253,18 @@ ul.social-icons {
 @media screen and (max-width: 719px) {
   .hidden-sm {
     display: none; } }
+
+/*
+    From http://cssdeck.com/labs/beautiful-flat-buttons
+*/
+.btn {
+  padding: 20px;
+  font-size: 1.5rem;
+  text-align: center;
+  background: #2980b9;
+  border: 0;
+  border-bottom: 2px solid #2475ab;
+  -webkit-box-shadow: inset 0 -2px #2475ab;
+  box-shadow: inset 0 -2px #2475ab; }
 
 /*# sourceMappingURL=style.css.map */

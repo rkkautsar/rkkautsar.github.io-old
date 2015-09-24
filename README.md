@@ -11,3 +11,4 @@ Credits :
 - [Neat](https://github.com/thoughtbot/neat)
 - [Quantum Colors](https://github.com/nickpfisterer/quantum-colors)
 - [Basic Typography in SASS](https://github.com/lchamb/typography)
+- [JQuery PhotoWall](https://github.com/creotiv/jquery-photowall)
